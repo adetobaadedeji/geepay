@@ -1,0 +1,117 @@
+@import "../../index.scss";
+
+.platforms {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  background-color: rgba(255, 255, 255, 1);
+  border: 1px solid rgba(237, 242, 247, 1);
+  border-radius: 8px;
+  padding: 1.6rem 2rem 3rem;
+
+  &__heading {
+    font-size: 1.6rem;
+    font-weight: 400;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+
+    h4 {
+      color: #26282c;
+    }
+
+    span {
+      color: #34caa5;
+    }
+  }
+
+  &__content {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+
+    .platform {
+      display: flex;
+      flex-direction: column;
+      gap: 1.7rem;
+
+      &__name {
+        color: #22242c;
+        font-size: 1.6rem;
+        font-weight: 500;
+      }
+      &__analytics {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        span {
+          color: #525252;
+          font-size: 1.6rem;
+          font-weight: 300;
+        }
+      }
+
+      .progressBar {
+        appearance: none;
+        height: 12px;
+        width: 100%;
+        border-radius: 40px;
+        background-color: #f5f5f5;
+
+        /* Chrome and Safari */
+        &::-webkit-progress-bar {
+          background: #f5f5f5;
+          border-radius: 40px;
+        }
+
+        &::-webkit-progress-value {
+          border-top-left-radius: 40px;
+          border-bottom-left-radius: 40px;
+        }
+
+        /* Firefox */
+        &::-moz-progress-bar {
+          border-top-left-radius: 40px;
+          border-bottom-left-radius: 40px;
+        }
+      }
+
+      .purple {
+        &::-webkit-progress-value {
+          background-color: rgba(97, 96, 220, 1);
+        }
+        &::-moz-progress-bar {
+          background-color: rgba(97, 96, 220, 1);
+        }
+      }
+      .blue {
+        &::-webkit-progress-value {
+          background-color: rgba(84, 197, 235, 1);
+        }
+        &::-moz-progress-bar {
+          background-color: rgba(84, 197, 235, 1);
+        }
+      }
+      .orange {
+        &::-webkit-progress-value {
+          background-color: rgba(255, 183, 74, 1);
+        }
+        &::-moz-progress-bar {
+          background-color: rgba(255, 183, 74, 1);
+        }
+      }
+      .red {
+        &::-webkit-progress-value {
+          background-color: rgba(255, 74, 85, 1);
+        }
+        &::-moz-progress-bar {
+          background-color: rgba(255, 74, 85, 1);
+        }
+      }
+    }
+  }
+}

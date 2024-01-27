@@ -1,0 +1,170 @@
+@import "../../index.scss";
+
+.orders {
+  width: 100%;
+  padding: 1.8rem 2rem 3rem;
+  background: #ffffff;
+  border: 1px solid rgba(237, 242, 247, 1);
+  border-radius: 14px;
+
+  .heading {
+    font-size: 1.6rem;
+    font-weight: 400;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+
+    h4 {
+      color: #26282c;
+    }
+
+    span {
+      color: #34caa5;
+    }
+  }
+
+  .details {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 1rem;
+
+    @include min-sm-tab {
+      flex-direction: row;
+      align-items: center;
+      // gap: 1.7rem;
+    }
+
+    &__picture {
+      display: flex;
+    }
+
+    &__name {
+      font-size: 1.5rem;
+      font-weight: 400;
+      color: #3a3f51;
+    }
+  }
+
+  .status {
+    font-size: 1.4rem;
+    font-weight: 300;
+  }
+  .paidStatus {
+    color: #34caa5;
+  }
+  .refundStatus {
+    color: #ed544e;
+  }
+
+  .date {
+    color: #737373;
+    font-size: 1.4rem;
+    font-weight: 300;
+  }
+  .amount {
+    color: #0d062d;
+    font-size: 1.4rem;
+    font-weight: 400;
+  }
+  .invoice-download {
+    display: flex;
+    gap: 0.5rem;
+    align-items: flex-start;
+  }
+  .invoice {
+    color: #0d062d;
+    font-size: 1.3rem;
+    font-weight: 300;
+  }
+
+  &__table {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    border-collapse: collapse;
+    border-spacing: 0;
+    color: #8392ab;
+    font-family: "Plus Jakarta Sans", sans-serif;
+    margin-top: -6rem;
+
+    @include min-sm-tab {
+      margin-top: 0;
+    }
+
+    thead {
+      visibility: hidden;
+      background: #ffffff;
+      @include min-sm-tab {
+        visibility: visible;
+      }
+    }
+
+    tr {
+      border-bottom: 2px solid #f5f5f5;
+      padding: 5px;
+      margin-bottom: 10px;
+      display: block;
+
+      &:last-child {
+        border-bottom: none;
+      }
+
+      @include min-sm-tab {
+        display: table-row;
+        border-bottom-width: 1px;
+        margin-bottom: 0;
+
+        &:nth-child(even) {
+          background: #ffffff;
+        }
+      }
+    }
+
+    th,
+    td {
+      padding: 10px 0px;
+      text-align: left;
+    }
+
+    th {
+      font-size: 1.4rem;
+      font-weight: 400;
+      color: #9ca4ab;
+      border-bottom: 1px solid #edf2f6;
+
+      @include min-sm-tab {
+        padding-bottom: 18px;
+      }
+    }
+
+    td {
+      display: flex;
+      justify-content: space-between;
+      text-align: right;
+      font-size: 13px;
+      border-bottom: 1px solid #edf2f6;
+
+      &:last-child {
+        border-bottom: none;
+      }
+
+      @include min-sm-tab {
+        display: table-cell;
+        text-align: left;
+        font-size: 1.4rem;
+        border-bottom: none;
+      }
+    }
+
+    td:before {
+      content: attr(data-label);
+      display: flex;
+      @include min-sm-tab {
+        content: "";
+        display: none;
+      }
+    }
+  }
+}

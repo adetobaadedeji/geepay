@@ -1,0 +1,100 @@
+@import "../../index.scss";
+
+.analytics {
+  display: flex;
+  max-width: 100%;
+  gap: 2.94rem;
+
+  @include xlg-tab {
+    flex-direction: column-reverse;
+  }
+
+  @include lg-lapt {
+    gap: 2rem;
+  }
+
+  &__left {
+    flex: 1;
+    padding: 1.6rem 2rem;
+    background: #ffffff;
+    border: 1px solid rgba(237, 242, 247, 1);
+    border-radius: 14px;
+    overflow-x: auto;
+
+    @include xlg-tab {
+      width: 100%;
+    }
+
+    &--info {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      width: 100%;
+
+      h2 {
+        color: #26282c;
+        font-size: 1.6rem;
+        font-weight: 500;
+      }
+
+      p {
+        font-size: 1.4rem;
+        color: #b9b9b9;
+      }
+    }
+
+    &--sort {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+
+      span {
+        color: #3a3f51;
+        font-size: 1.3rem;
+        font-weight: 400;
+      }
+      .wrapper {
+        border-radius: 20px;
+        display: inline-block;
+        overflow: hidden;
+        background: rgba(255, 255, 255, 1);
+        border: 1px solid rgba(225, 223, 223, 1);
+        width: 96px;
+      }
+      select {
+        width: 82px;
+        height: 32px;
+        padding-left: 6px;
+        border: 0px;
+        outline: none;
+        color: rgba(58, 63, 81, 1);
+      }
+    }
+
+    &--graph {
+      height: 300px;
+      max-height: 348px;
+
+      @include xlg-phone {
+        height: 400px;
+        max-height: 400px;
+      }
+    }
+  }
+
+  &__right {
+    width: 36.3%;
+    background-color: rgba(250, 250, 250, 1);
+    display: flex;
+
+    @include lg-lapt {
+      width: 41%;
+    }
+    @include sm-lapt {
+      width: 44%;
+    }
+    @include xlg-tab {
+      width: 100%;
+    }
+  }
+}

@@ -1,0 +1,120 @@
+//transition
+$transition: all 300ms ease-in-out;
+
+// Media Querie Break Points
+// Phones
+$screen-sm-phone: 320px;
+$screen-md-phone: 380px;
+$screen-lg-phone: 480px;
+$screen-xlg-phone: 541px;
+
+// Tablets (portrait to landscape view)
+$screen-sm-tab: 768px;
+$screen-smd-tab: 845px;
+$screen-md-tab: 960px;
+$screen-lg-tab: 1024px;
+$screen-xlg-tab: 1220px;
+
+//lapton screens
+$screen-sm-lapt: 1285px;
+$screen-smd-lapt: 1304px;
+$screen-md-lapt: 1366px;
+$screen-lg-lapt: 1440px;
+$screen-xlg-lapt: 1600px;
+
+// Phone devices
+@mixin sm-phone {
+  @media (max-width: #{$screen-sm-phone}) {
+    @content;
+  }
+}
+@mixin md-phone {
+  @media (max-width: #{$screen-md-phone}) {
+    @content;
+  }
+}
+@mixin lg-phone {
+  @media (max-width: #{$screen-lg-phone}) {
+    @content;
+  }
+}
+@mixin xlg-phone {
+  @media (max-width: #{$screen-xlg-phone}) {
+    @content;
+  }
+}
+// Tablet devices
+@mixin min-sm-tab {
+  @media (min-width: #{$screen-sm-tab}) {
+    @content;
+  }
+}
+@mixin sm-tab {
+  @media (max-width: #{$screen-sm-tab}) {
+    @content;
+  }
+}
+@mixin smd-tab {
+  @media (max-width: #{$screen-smd-tab}) {
+    @content;
+  }
+}
+@mixin md-tab {
+  @media (max-width: #{$screen-md-tab}) {
+    @content;
+  }
+}
+@mixin lg-tab {
+  @media (max-width: #{$screen-lg-tab}) {
+    @content;
+  }
+}
+@mixin xlg-tab {
+  @media (max-width: #{$screen-xlg-tab}) {
+    @content;
+  }
+}
+// Laptop devices
+@mixin sm-lapt {
+  @media (max-width: #{$screen-sm-lapt}) {
+    @content;
+  }
+}
+@mixin smd-lapt {
+  @media (max-width: #{$screen-smd-lapt}) {
+    @content;
+  }
+}
+@mixin md-lapt {
+  @media (max-width: #{$screen-md-lapt}) {
+    @content;
+  }
+}
+@mixin lg-lapt {
+  @media (max-width: #{$screen-lg-lapt}) {
+    @content;
+  }
+}
+@mixin xlg-lapt {
+  @media (max-width: #{$screen-xlg-lapt}) {
+    @content;
+  }
+}
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-family: "Plus Jakarta Sans", sans-serif;
+  scroll-behavior: smooth;
+  background-color: rgba(250, 250, 250, 1);
+}

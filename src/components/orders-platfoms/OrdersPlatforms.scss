@@ -1,0 +1,37 @@
+@import "../../index.scss";
+
+.orders-platforms {
+  display: flex;
+  max-width: 100%;
+  gap: 2.94rem;
+
+  @include xlg-tab {
+    flex-direction: column-reverse;
+  }
+
+  @include lg-lapt {
+    gap: 2rem;
+  }
+
+  &__left {
+    flex: 1;
+
+    @include xlg-tab {
+      width: 100%;
+    }
+  }
+
+  &__right {
+    width: 36.3%;
+
+    @include lg-lapt {
+      width: 41%;
+    }
+    @include sm-lapt {
+      width: 44%;
+    }
+    @include xlg-tab {
+      width: 100%;
+    }
+  }
+}

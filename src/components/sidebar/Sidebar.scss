@@ -1,0 +1,147 @@
+@import "../../index.scss";
+
+.sidebar-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 999;
+}
+
+.sidebar.openSidebar + .sidebar-overlay {
+  display: block;
+}
+
+.sidebar {
+  transition: $transition;
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  bottom: 0px;
+  z-index: 1000;
+  width: 80px;
+  max-width: 80px;
+  background-color: rgba(247, 248, 250, 1);
+
+  @include md-tab {
+    width: 25.3rem;
+    max-width: 25.3rem;
+    box-shadow: rgb(182 182 182 / 70%) 0px 2px 5px;
+    transition: all 0.5s linear 0s;
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    bottom: 0px;
+    z-index: 1000;
+    overflow-y: hidden;
+
+    &.openSidebar {
+      transform: translateX(0px);
+    }
+
+    &.closeSidebar {
+      transform: translateX(-100vw);
+    }
+  }
+
+  &--button {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    height: 3rem;
+    width: 3rem;
+    border-radius: 50%;
+    border: none;
+    cursor: pointer;
+    display: none;
+
+    @include md-tab {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+  }
+
+  &--container {
+    height: 100vh;
+    padding: 20px 0;
+    display: flex;
+    flex-direction: column;
+    border-right: 1px solid rgba(235, 236, 242, 1);
+
+    &__logocontainer {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 28px;
+
+      @include md-tab {
+        justify-content: flex-start;
+        padding-left: 2rem;
+        margin-top: 20px;
+      }
+    }
+
+    &__nav {
+      width: 100%;
+      transition: $transition;
+
+      ul {
+        list-style: none;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 32px;
+        width: 100%;
+
+        li {
+          position: relative;
+          display: flex;
+          align-items: center;
+          border-right: 3px solid rgba(247, 248, 250, 1);
+          border-top-right-radius: 3px;
+          border-bottom-right-radius: 3px;
+          transition: $transition;
+          width: 100%;
+          justify-content: center;
+
+          @include md-tab {
+            justify-content: flex-start;
+            padding-left: 2rem;
+          }
+
+          .title {
+            display: none;
+
+            @include md-tab {
+              font-size: 1.4rem;
+              margin-left: 1.25rem;
+              margin-top: 0rem;
+              color: rgba(13, 6, 45, 1);
+              letter-spacing: 0.05rem;
+              opacity: 0.6;
+              display: flex;
+            }
+          }
+
+          &.active {
+            border-right: 3px solid rgba(13, 6, 45, 1);
+
+            .title {
+              opacity: 1;
+              font-weight: 400;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.bottom-nav {
+  margin-top: auto;
+  margin-bottom: 10px;
+}
